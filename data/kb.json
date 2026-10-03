@@ -1,0 +1,85 @@
+[
+  {
+    "id": "algeria_info_1",
+    "text": "Algeria is North Africa's largest country, known for its Mediterranean coastline, the Sahara desert, and Roman ruins such as Timgad and Djemila. The capital, Algiers, blends Ottoman, French colonial, and modern architecture, including the iconic Casbah, a UNESCO World Heritage site. Best time to visit is spring (March-May) or autumn (September-November) when temperatures are mild. Algeria's official languages are Arabic and Tamazight, with French widely spoken. The currency is the Algerian Dinar (DZD).",
+    "metadata": {"destination": "Algeria", "type": "general_info"}
+  },
+  {
+    "id": "algeria_info_2",
+    "text": "Visa requirements for Algeria vary by nationality; many visitors require a visa obtained in advance through an Algerian embassy or consulate, and tourist visas typically require an invitation letter or confirmed itinerary. Travelers should check current requirements with the nearest Algerian consulate before booking. Algeria is generally safe for tourists in major cities and the north, though travel advisories recommend caution in southern border regions near Libya, Mali, and Niger.",
+    "metadata": {"destination": "Algeria", "type": "general_info"}
+  },
+  {
+    "id": "algeria_hotel_1",
+    "text": "Agency offer: 4-night stay at Hotel Es Safir Algiers (4-star), city center location near the Casbah, breakfast included. Package price: 450 EUR per person based on double occupancy. Availability: year-round. Includes airport transfer.",
+    "metadata": {"destination": "Algeria", "type": "hotel_offer"}
+  },
+  {
+    "id": "algeria_flight_1",
+    "text": "Agency offer: round-trip flights to Algiers (ALG) from major European hubs, economy class, starting at 280 EUR per person. Direct flights available from Paris, Marseille, and Istanbul. Booking window: at least 2 weeks in advance for best rates.",
+    "metadata": {"destination": "Algeria", "type": "flight_offer"}
+  },
+
+  {
+    "id": "italy_info_1",
+    "text": "Italy is renowned for its art, history, cuisine, and landscapes, from the canals of Venice to the ruins of Rome and the hills of Tuscany. Major destinations include Rome, Florence, Venice, and the Amalfi Coast. Best time to visit is April-June or September-October to avoid peak summer crowds and heat. Italy uses the Euro (EUR) and Italian is the official language, though English is widely understood in tourist areas.",
+    "metadata": {"destination": "Italy", "type": "general_info"}
+  },
+  {
+    "id": "italy_info_2",
+    "text": "Italy is part of the Schengen Area, so EU citizens and many other nationalities can enter without a visa for short stays (up to 90 days). Travelers from other countries should check Schengen visa requirements. Italy is generally very safe for tourists, with standard precautions advised against pickpocketing in crowded tourist areas like train stations and major attractions.",
+    "metadata": {"destination": "Italy", "type": "general_info"}
+  },
+  {
+    "id": "italy_hotel_1",
+    "text": "Agency offer: 5-night stay split between Rome (3 nights) and Florence (2 nights), 4-star hotels, breakfast included, package price: 620 EUR per person based on double occupancy. Includes train transfer between cities.",
+    "metadata": {"destination": "Italy", "type": "hotel_offer"}
+  },
+  {
+    "id": "italy_flight_1",
+    "text": "Agency offer: round-trip flights to Rome (FCO) or Milan (MXP), economy class, starting at 190 EUR per person from major European cities. Frequent daily departures available.",
+    "metadata": {"destination": "Italy", "type": "flight_offer"}
+  },
+
+  {
+    "id": "greece_info_1",
+    "text": "Greece is famous for its ancient history, island-hopping culture, and Mediterranean cuisine. Highlights include Athens' Acropolis, the islands of Santorini and Mykonos, and the historic sites of Delphi and Olympia. Best time to visit is May-June or September for warm weather without peak summer crowds. Greece uses the Euro (EUR) and Greek is the official language, with English widely spoken in tourist regions.",
+    "metadata": {"destination": "Greece", "type": "general_info"}
+  },
+  {
+    "id": "greece_info_2",
+    "text": "Greece is part of the Schengen Area; EU citizens and many other nationalities can enter visa-free for stays up to 90 days. Ferries are a common way to travel between islands, and booking inter-island ferries in advance during peak summer season (July-August) is recommended. Greece is considered very safe for tourists.",
+    "metadata": {"destination": "Greece", "type": "general_info"}
+  },
+  {
+    "id": "greece_hotel_1",
+    "text": "Agency offer: 6-night stay in Santorini, 4-star cliffside hotel with caldera view, breakfast included, package price: 780 EUR per person based on double occupancy. Availability limited in July-August; book early.",
+    "metadata": {"destination": "Greece", "type": "hotel_offer"}
+  },
+  {
+    "id": "greece_flight_1",
+    "text": "Agency offer: round-trip flights to Athens (ATH), economy class, starting at 220 EUR per person. Connecting flights or ferries to Santorini and Mykonos available as add-ons starting at 60 EUR.",
+    "metadata": {"destination": "Greece", "type": "flight_offer"}
+  },
+
+  {
+    "id": "qatar_info_1",
+    "text": "Qatar is a modern Gulf nation known for Doha's futuristic skyline, the Museum of Islamic Art, Souq Waqif, and luxury shopping. It blends traditional Arab culture with ultramodern infrastructure. Best time to visit is November-March when temperatures are cooler; summer months (June-September) are extremely hot and humid. Qatar uses the Qatari Riyal (QAR), and Arabic is the official language, with English widely used in business and tourism.",
+    "metadata": {"destination": "Qatar", "type": "general_info"}
+  },
+  {
+    "id": "qatar_info_2",
+    "text": "Many nationalities can enter Qatar visa-free or obtain a visa on arrival for tourism purposes, typically for stays up to 30-90 days depending on nationality. Qatar is one of the safest countries in the world for tourists, with very low crime rates. Visitors should respect local customs, particularly modest dress in public and religious sites, and be aware that alcohol is only served in licensed hotels and restaurants.",
+    "metadata": {"destination": "Qatar", "type": "general_info"}
+  },
+  {
+    "id": "qatar_hotel_1",
+    "text": "Agency offer: 4-night stay at a 5-star hotel in West Bay, Doha, breakfast included, package price: 690 EUR per person based on double occupancy. Includes desert safari excursion.",
+    "metadata": {"destination": "Qatar", "type": "hotel_offer"}
+  },
+  {
+    "id": "qatar_flight_1",
+    "text": "Agency offer: round-trip flights to Doha (DOH), economy class, starting at 310 EUR per person from major European and North African hubs via Qatar Airways. Direct flights widely available.",
+    "metadata": {"destination": "Qatar", "type": "flight_offer"}
+  }
+]
