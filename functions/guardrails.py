@@ -1,9 +1,10 @@
 from graph.state import GraphState
 from functions.llm_config import llm
 from models.guardrails.safety_check import SafetyCheck
-from prompts.guardrails import SAFETY_CHECK_PROMPT
+from prompts.guardrails import SAFETY_CHECK_PROMPT, OUTPUT_SAFETY_CHECK_PROMPT
 from langchain_core.prompts import PromptTemplate
 from langchain_core.messages import AIMessage
+from functions.retreival import get_documents
  
 
 
@@ -17,7 +18,24 @@ def input_safety_check(state:GraphState):
     if not response.safe:
         refusal = AIMessage(content=f"I'm not able to help with that. {response.reason or ''}")
         return {"safety_check": response, "messages": [refusal]}
+    return {"safety_check":response,"user_question": message}
+
+
+def output_safety_check(state:GraphState):
+    ai_response= state["messages"][-1].content
+    user_question=state["user_question"]
+    documents= state["rag_documents"]
+
+    prompt=PromptTemplate(input_variables=["user_question","ai_response","documents"],
+    template=OUTPUT_SAFETY_CHECK_PROMPT)
+    structured_llm = llm.with_structured_output(SafetyCheck, method="json_mode")
+    chain= prompt | structured_llm 
+    response=chain.invoke({"user_question":user_question, "ai_response":ai_response, "documents":documents})
+    if not response.safe:
+        refusal = AIMessage(content=f"I don't have confirmed information matching your exact request. Here's what the agency does offer: {' '.join(documents)}. Please reach out to the agency for more details. {response.reason or ''}")
+        return {"safety_check": response, "messages": [refusal]}
     return {"safety_check":response}
+
 
 def branching_logic_safety_check(state:GraphState):
     if state["safety_check"].safe:

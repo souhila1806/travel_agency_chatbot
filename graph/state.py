@@ -9,9 +9,11 @@ from models.guardrails.safety_check import SafetyCheck
 
 class GraphState(TypedDict):
     messages: Annotated[list, add_messages]
+    user_question: Optional[str]
     user_id: str 
     router_output: Optional[RouterOutput]
     action_request: Optional[ActionRequest]
     trip: Optional[Trip]
     rag_query: Optional[RAGQuery]
     safety_check: Optional[SafetyCheck]
+    rag_documents: Optional[list[str]]

@@ -92,7 +92,7 @@ def generate_rag_response(state:GraphState):
     template=GENERATE_RAG_RESPONSE_PROMPT)
     chain= prompt | llm 
     response = chain.invoke({"query": query, "documents":documents})
-    return {"messages": [response]}
+    return {"messages": [response], "rag_documents": documents}
 
 def format_trip_summary(trip: Trip) -> str:
     lines = [

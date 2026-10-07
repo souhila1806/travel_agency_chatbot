@@ -71,7 +71,7 @@ EXTRACT_RAG_QUERY_PROMPT = """You are a helpful assistant for our travel agency.
 - "general_info": the user is asking about visa requirements, currency, best time to visit, or other background/practical information — NOT whether the agency has packages)
 
 The type field must be EXACTLY one of these three strings: "general_info", "hotel_offer", or "flight_offer" — nothing else. Do not add any other fields to your response.
-
+If the user mentions a specific city, map it to the country it belongs to, since our knowledge base is organized by country (e.g. "Algiers" → "Algeria", "Doha" → "Qatar", "Rome" or "Florence" → "Italy", "Santorini" → "Greece").
 user query: {query}
 """
 
