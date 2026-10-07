@@ -10,3 +10,4 @@ langsmith
 streamlit
 fastapi
 uvicorn
+streamlit

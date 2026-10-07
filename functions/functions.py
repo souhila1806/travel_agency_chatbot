@@ -36,7 +36,8 @@ def handle_question(state: GraphState):
 
 
 def extract_action_request(state: GraphState):
-    request= state["messages"][-1].content
+    recent_messages = state["messages"][-6:]  # last 6 messages (3 exchanges), tune as needed
+    request = "\n".join([f"{msg.type}: {msg.content}" for msg in recent_messages])
     prompt=PromptTemplate(input_variables=["request","date"],
     template=ACTION_REQUEST_EXTRACTION_PROMPT)
     structured_llm= llm.with_structured_output(ActionRequest, method="function_calling")
@@ -64,17 +65,21 @@ def generate_trip(state: GraphState):
 def refine(state: GraphState):
     previous_trip= state["trip"]
     feedback= state["messages"][-1].content
-    prompt=PromptTemplate(input_variables=["previous_trip","feedback"],
+    hotel_price,ticket_price=get_pricing_information(previous_trip.destination)
+    pricing_information=f"hotel cost {hotel_price} and ticket price {ticket_price}"
+    
+    prompt=PromptTemplate(input_variables=["previous_trip","feedback", "pricing_information"],
     template=REFINE_TRIP_PROMPT)
     structured_llm= llm.with_structured_output(Trip, method="json_mode")
     chain= prompt | structured_llm 
-    trip = chain.invoke({"previous_trip": previous_trip,"feedback":feedback})
+    trip = chain.invoke({"previous_trip": previous_trip,"feedback":feedback, "pricing_information": pricing_information})
     summary = format_trip_summary(trip)
     return {"trip": trip, "messages": [AIMessage(content=summary)]}
 
 
 def extract_rag_query(state: GraphState):
-    query= state["messages"][-1].content
+    recent_messages = state["messages"][-6:]  # last 6 messages (3 exchanges), tune as needed
+    query = "\n".join([f"{msg.type}: {msg.content}" for msg in recent_messages])
     prompt=PromptTemplate(input_variables=["query"],
     template=EXTRACT_RAG_QUERY_PROMPT)
     structured_llm = llm.with_structured_output(RAGQuery, method="json_mode")

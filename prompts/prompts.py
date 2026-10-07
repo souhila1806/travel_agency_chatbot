@@ -7,6 +7,8 @@ request: {request}
 
 ACTION_REQUEST_EXTRACTION_PROMPT = """You are a helpful assistant for our travel agency that extracts trip information from user requests.
 
+please note that the user request includes the last 6 messages (3 exchanges) between the user and the assistant, so you may need to extract the relevant information from multiple messages and answer the latest user message.
+
 Any dates should be in YYYY-MM-DD format.
 Note that today is {date}
 
@@ -42,7 +44,9 @@ Respond ONLY with the JSON object described above. Do not include any explanatio
 REFINE_TRIP_PROMPT = """You are a helpful assistant for our travel agency that generates detailed, realistic trip itineraries.
 
 You previously suggested a trip to a customer. The customer has given feedback. Your job is to generate an updated, complete trip plan that incorporates their feedback.
+If pricing information for other expenses (flight tickets and hotel price) is provided below, use it for the relevant stops. If no pricing is available, estimate a reasonable budget yourself — but still only output the structured data described below, never an explanation of your estimate.
 
+pricing information: {pricing_information}
 previous_trip: {previous_trip}
 
 user feedback: {feedback}
@@ -72,6 +76,8 @@ EXTRACT_RAG_QUERY_PROMPT = """You are a helpful assistant for our travel agency.
 
 The type field must be EXACTLY one of these three strings: "general_info", "hotel_offer", or "flight_offer" — nothing else. Do not add any other fields to your response.
 If the user mentions a specific city, map it to the country it belongs to, since our knowledge base is organized by country (e.g. "Algiers" → "Algeria", "Doha" → "Qatar", "Rome" or "Florence" → "Italy", "Santorini" → "Greece").
+
+please note that the user query includes the last 6 messages (3 exchanges) between the user and the assistant, so you may need to extract the relevant information from multiple messages and answer the latest user message.
 user query: {query}
 """
 
