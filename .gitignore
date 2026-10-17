@@ -58,4 +58,6 @@ ios/*.xcodeproj/xcuserdata/
 *.local
 
 vir-env/
+__pycache__/
+*.pyc
 
