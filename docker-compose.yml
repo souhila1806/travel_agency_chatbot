@@ -2,10 +2,11 @@ services:
   travel-agent:
     build: .
     ports:
-      - "8501:8501"
+      - "${PORT:-8501}:${PORT:-8501}"
     env_file:
       - .env
     environment:
+      PORT: ${PORT:-8501}
       OLLAMA_BASE_URL: http://host.docker.internal:11434
       LLM_PROVIDER: groq
       GROQ_MODEL: openai/gpt-oss-120b
